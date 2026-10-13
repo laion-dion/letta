@@ -1,0 +1,190 @@
+# File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+from typing import Union, Optional
+from typing_extensions import Literal, Annotated, TypeAlias
+
+from pydantic import Field as FieldInfo
+
+from .._utils import PropertyInfo
+from .._models import BaseModel
+from .provider_category import ProviderCategory
+from .text_response_format import TextResponseFormat
+from .json_object_response_format import JsonObjectResponseFormat
+from .json_schema_response_format import JsonSchemaResponseFormat
+
+__all__ = ["LlmConfig", "ResponseFormat"]
+
+ResponseFormat: TypeAlias = Annotated[
+    Union[TextResponseFormat, JsonSchemaResponseFormat, JsonObjectResponseFormat, None],
+    PropertyInfo(discriminator="type"),
+]
+
+
+class LlmConfig(BaseModel):
+    """Configuration for Language Model (LLM) connection and generation parameters.
+
+    .. deprecated::
+        LLMConfig is deprecated and should not be used as an input or return type in API calls.
+        Use the schemas in letta.schemas.model (ModelSettings, OpenAIModelSettings, etc.) instead.
+        For conversion, use the _to_model() method or Model._from_llm_config() method.
+    """
+
+    context_window: int
+    """The context window size for the model."""
+
+    model: str
+    """LLM model name."""
+
+    api_model_endpoint_type: Literal[
+        "openai",
+        "anthropic",
+        "google_ai",
+        "google_vertex",
+        "azure",
+        "groq",
+        "ollama",
+        "webui",
+        "webui-legacy",
+        "lmstudio",
+        "lmstudio-legacy",
+        "lmstudio-chatcompletions",
+        "llamacpp",
+        "koboldcpp",
+        "vllm",
+        "hugging-face",
+        "minimax",
+        "mistral",
+        "together",
+        "bedrock",
+        "deepseek",
+        "xai",
+        "zai",
+        "zai_coding",
+        "baseten",
+        "fireworks",
+        "openrouter",
+        "chatgpt_oauth",
+    ] = FieldInfo(alias="model_endpoint_type")
+    """The endpoint type for the model."""
+
+    compatibility_type: Optional[Literal["gguf", "mlx"]] = None
+    """The framework compatibility type for the model."""
+
+    display_name: Optional[str] = None
+    """A human-friendly display name for the model."""
+
+    effort: Optional[Literal["low", "medium", "high", "max"]] = None
+    """The effort level for Anthropic models that support it (Opus 4.5, Opus 4.6).
+
+    Controls token spending and thinking behavior. Not setting this gives similar
+    performance to 'high'.
+    """
+
+    enable_reasoner: Optional[bool] = None
+    """
+    Whether or not the model should use extended thinking if it is a 'reasoning'
+    style model
+    """
+
+    frequency_penalty: Optional[float] = None
+    """
+    Positive values penalize new tokens based on their existing frequency in the
+    text so far, decreasing the model's likelihood to repeat the same line verbatim.
+    From OpenAI: Number between -2.0 and 2.0.
+    """
+
+    handle: Optional[str] = None
+    """The handle for this config, in the format provider/model-name."""
+
+    max_reasoning_tokens: Optional[int] = None
+    """Configurable thinking budget for extended thinking.
+
+    Used for enable_reasoner and also for Google Vertex models like Gemini 2.5
+    Flash. Minimum value is 1024 when used with enable_reasoner.
+    """
+
+    max_tokens: Optional[int] = None
+    """The maximum number of tokens to generate.
+
+    If not set, the model will use its default value.
+    """
+
+    api_model_endpoint: Optional[str] = FieldInfo(alias="model_endpoint", default=None)
+    """The endpoint for the model."""
+
+    api_model_wrapper: Optional[str] = FieldInfo(alias="model_wrapper", default=None)
+    """The wrapper for the model."""
+
+    parallel_tool_calls: Optional[bool] = None
+    """Deprecated: Use model_settings to configure parallel tool calls instead.
+
+    If set to True, enables parallel tool calling. Defaults to False.
+    """
+
+    provider_category: Optional[ProviderCategory] = None
+    """The provider category for the model."""
+
+    provider_name: Optional[str] = None
+    """The provider name for the model."""
+
+    put_inner_thoughts_in_kwargs: Optional[bool] = None
+    """Puts 'inner_thoughts' as a kwarg in the function call if this is set to True.
+
+    This helps with function calling performance and also the generation of inner
+    thoughts.
+    """
+
+    reasoning_effort: Optional[Literal["none", "minimal", "low", "medium", "high", "xhigh"]] = None
+    """The reasoning effort to use when generating text reasoning models"""
+
+    response_format: Optional[ResponseFormat] = None
+    """The response format for the model's output.
+
+    Supports text, json_object, and json_schema (structured outputs). Can be set via
+    model_settings.
+    """
+
+    return_logprobs: Optional[bool] = None
+    """Whether to return log probabilities of the output tokens.
+
+    Useful for RL training.
+    """
+
+    return_token_ids: Optional[bool] = None
+    """Whether to return token IDs for all LLM generations via SGLang native endpoint.
+
+    Required for multi-turn RL training with loss masking. Only works with SGLang
+    provider.
+    """
+
+    strict: Optional[bool] = None
+    """Enable strict mode for tool calling.
+
+    When true, tool schemas include strict: true and additionalProperties: false,
+    guaranteeing tool outputs match JSON schemas.
+    """
+
+    temperature: Optional[float] = None
+    """The temperature to use when generating text with the model.
+
+    A higher temperature will result in more random text.
+    """
+
+    tier: Optional[str] = None
+    """The cost tier for the model (cloud only)."""
+
+    tool_call_parser: Optional[str] = None
+    """SGLang tool call parser name (e.g.
+
+    'glm47', 'qwen25', 'hermes'). Used by the SGLang native adapter to parse tool
+    calls from raw model output.
+    """
+
+    top_logprobs: Optional[int] = None
+    """Number of most likely tokens to return at each position (0-20).
+
+    Requires return_logprobs=True.
+    """
+
+    verbosity: Optional[Literal["low", "medium", "high"]] = None
+    """Soft control for how verbose model output should be, used for GPT-5 models."""

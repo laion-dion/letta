@@ -1,0 +1,2538 @@
+[
+ {
+  "method": "POST",
+  "path": "/auth",
+  "handler": "authenticate_user",
+  "line": 26,
+  "file": "letta/server/rest_api/auth/index.py",
+  "tags": [
+   "auth"
+  ],
+  "summary": "",
+  "op_id": "authenticate_user"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/chat/completions",
+  "handler": "create_chat_completions",
+  "line": 39,
+  "file": "letta/server/rest_api/routers/openai/chat_completions/chat_completions.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_chat_completions"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_agents",
+  "line": 125,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_agents"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_agents",
+  "line": 218,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "count_agents"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/export",
+  "handler": "export_agent",
+  "line": 296,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "export_agent"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/export",
+  "handler": "export_agent_with_skills",
+  "line": 352,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "export_agent_with_skills"
+ },
+ {
+  "method": "POST",
+  "path": "/import",
+  "handler": "import_agent",
+  "line": 465,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "import_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/context",
+  "handler": "retrieve_agent_context_window",
+  "line": 589,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_agent_context_window"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_agent",
+  "line": 614,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}",
+  "handler": "modify_agent",
+  "line": 630,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/tools",
+  "handler": "list_tools_for_agent",
+  "line": 642,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_tools_for_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/tools/attach/{tool_id}",
+  "handler": "attach_tool_to_agent",
+  "line": 671,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_tool_to_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/tools/detach/{tool_id}",
+  "handler": "detach_tool_from_agent",
+  "line": 689,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_tool_from_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/tools/approval/{tool_name}",
+  "handler": "modify_approval_for_tool",
+  "line": 715,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_approval_for_tool"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/tools/{tool_name}/run",
+  "handler": "run_tool_for_agent",
+  "line": 748,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "run_tool_for_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/sources/attach/{source_id}",
+  "handler": "attach_source",
+  "line": 820,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_source_to_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/folders/attach/{folder_id}",
+  "handler": "attach_folder_to_agent",
+  "line": 847,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_folder_to_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/sources/detach/{source_id}",
+  "handler": "detach_source",
+  "line": 876,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_source_from_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/folders/detach/{folder_id}",
+  "handler": "detach_folder_from_agent",
+  "line": 908,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_folder_from_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/files/close-all",
+  "handler": "close_all_files_for_agent",
+  "line": 942,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "close_all_files_for_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/files/{file_id}/open",
+  "handler": "open_file_for_agent",
+  "line": 959,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "open_file_for_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/files/{file_id}/close",
+  "handler": "close_file_for_agent",
+  "line": 1008,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "close_file_for_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}",
+  "handler": "retrieve_agent",
+  "line": 1033,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_agent"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{agent_id}",
+  "handler": "delete_agent",
+  "line": 1066,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/sources",
+  "handler": "list_agent_sources",
+  "line": 1080,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_agent_sources"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/folders",
+  "handler": "list_folders_for_agent",
+  "line": 1111,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_folders_for_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/files",
+  "handler": "list_files_for_agent",
+  "line": 1142,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_files_for_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/core-memory",
+  "handler": "retrieve_agent_memory",
+  "line": 1207,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_agent_memory"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/core-memory/blocks/{block_label}",
+  "handler": "retrieve_block_for_agent",
+  "line": 1222,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_core_memory_block"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/core-memory/blocks",
+  "handler": "list_blocks_for_agent",
+  "line": 1237,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_core_memory_blocks"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/core-memory/blocks/{block_label}",
+  "handler": "modify_block_for_agent",
+  "line": 1269,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_core_memory_block"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/recompile",
+  "handler": "recompile_agent",
+  "line": 1296,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "recompile_agent"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/system-prompt/recompile",
+  "handler": "recompile_agent_system_prompt",
+  "line": 1332,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "recompile_agent_system_prompt"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/core-memory/blocks/attach/{block_id}",
+  "handler": "attach_block_to_agent",
+  "line": 1356,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_core_memory_block"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/core-memory/blocks/detach/{block_id}",
+  "handler": "detach_block_from_agent",
+  "line": 1370,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_core_memory_block"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/archives/attach/{archive_id}",
+  "handler": "attach_archive_to_agent",
+  "line": 1384,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_archive_to_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/archives/detach/{archive_id}",
+  "handler": "detach_archive_from_agent",
+  "line": 1403,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_archive_from_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/identities/attach/{identity_id}",
+  "handler": "attach_identity_to_agent",
+  "line": 1422,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_identity_to_agent"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/identities/detach/{identity_id}",
+  "handler": "detach_identity_from_agent",
+  "line": 1441,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_identity_from_agent"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/archival-memory",
+  "handler": "list_passages",
+  "line": 1460,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_passages"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/archival-memory",
+  "handler": "create_passage",
+  "line": 1489,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_passage"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/archival-memory/search",
+  "handler": "search_archival_memory",
+  "line": 1510,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "search_archival_memory"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{agent_id}/archival-memory/{memory_id}",
+  "handler": "delete_passage",
+  "line": 1557,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_passage"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/messages",
+  "handler": "list_messages",
+  "line": 1579,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_messages"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/messages/{message_id}",
+  "handler": "modify_message",
+  "line": 1628,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_message"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/messages",
+  "handler": "send_message",
+  "line": 1662,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "send_message"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/messages/stream",
+  "handler": "send_message_streaming",
+  "line": 1844,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_agent_message_stream"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/messages/cancel",
+  "handler": "cancel_message",
+  "line": 1888,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "cancel_message"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/generate",
+  "handler": "generate_completion",
+  "line": 1969,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "generate_completion"
+ },
+ {
+  "method": "POST",
+  "path": "/messages/search",
+  "handler": "search_messages",
+  "line": 2029,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "search_messages"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/messages/async",
+  "handler": "send_message_async",
+  "line": 2200,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_agent_message_async"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{agent_id}/reset-messages",
+  "handler": "reset_messages",
+  "line": 2330,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "reset_messages"
+ },
+ {
+  "method": "GET",
+  "path": "/{agent_id}/groups",
+  "handler": "list_groups_for_agent",
+  "line": 2348,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_groups_for_agent"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/messages/preview-raw-payload",
+  "handler": "preview_model_request",
+  "line": 2384,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "preview_model_request"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/summarize",
+  "handler": "summarize_messages",
+  "line": 2431,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "summarize_messages"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/messages/capture",
+  "handler": "capture_messages",
+  "line": 2519,
+  "file": "letta/server/rest_api/routers/v1/agents.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "capture_messages"
+ },
+ {
+  "method": "ANY",
+  "path": "/v1/messages",
+  "handler": "anthropic_messages_proxy",
+  "line": 33,
+  "file": "letta/server/rest_api/routers/v1/anthropic.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "anthropic_messages_proxy"
+ },
+ {
+  "method": "ANY",
+  "path": "/v1/{endpoint:path}",
+  "handler": "anthropic_catchall_proxy",
+  "line": 275,
+  "file": "letta/server/rest_api/routers/v1/anthropic.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "anthropic_catchall_proxy"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_archive",
+  "line": 59,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_archive"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_archives",
+  "line": 91,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_archives"
+ },
+ {
+  "method": "GET",
+  "path": "/{archive_id}",
+  "handler": "retrieve_archive",
+  "line": 127,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_archive"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{archive_id}",
+  "handler": "modify_archive",
+  "line": 143,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_archive"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{archive_id}",
+  "handler": "delete_archive",
+  "line": 162,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_archive"
+ },
+ {
+  "method": "GET",
+  "path": "/{archive_id}/agents",
+  "handler": "list_agents_for_archive",
+  "line": 179,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_agents_for_archive"
+ },
+ {
+  "method": "POST",
+  "path": "/{archive_id}/passages",
+  "handler": "create_passage_in_archive",
+  "line": 216,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_passage_in_archive"
+ },
+ {
+  "method": "POST",
+  "path": "/{archive_id}/passages/batch",
+  "handler": "create_passages_in_archive",
+  "line": 239,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_passages_in_archive"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{archive_id}/passages/{passage_id}",
+  "handler": "delete_passage_from_archive",
+  "line": 259,
+  "file": "letta/server/rest_api/routers/v1/archives.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_passage_from_archive"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_blocks",
+  "line": 28,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_blocks"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_blocks",
+  "line": 112,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "count_blocks"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_block",
+  "line": 147,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_block"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{block_id}",
+  "handler": "modify_block",
+  "line": 158,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_block"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{block_id}",
+  "handler": "delete_block",
+  "line": 169,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_block"
+ },
+ {
+  "method": "GET",
+  "path": "/{block_id}",
+  "handler": "retrieve_block",
+  "line": 179,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_block"
+ },
+ {
+  "method": "GET",
+  "path": "/{block_id}/agents",
+  "handler": "list_agents_for_block",
+  "line": 192,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_agents_for_block"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{block_id}/identities/attach/{identity_id}",
+  "handler": "attach_identity_to_block",
+  "line": 245,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_identity_to_block"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{block_id}/identities/detach/{identity_id}",
+  "handler": "detach_identity_from_block",
+  "line": 264,
+  "file": "letta/server/rest_api/routers/v1/blocks.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_identity_from_block"
+ },
+ {
+  "method": "POST",
+  "path": "/chat/completions",
+  "handler": "create_chat_completion",
+  "line": 133,
+  "file": "letta/server/rest_api/routers/v1/chat_completions.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_chat_completion"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_conversation",
+  "line": 48,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_conversation"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_conversations",
+  "line": 64,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_conversations"
+ },
+ {
+  "method": "GET",
+  "path": "/{conversation_id}",
+  "handler": "retrieve_conversation",
+  "line": 93,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_conversation"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{conversation_id}",
+  "handler": "update_conversation",
+  "line": 107,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "update_conversation"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/fork",
+  "handler": "fork_conversation",
+  "line": 123,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "fork_conversation"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{conversation_id}",
+  "handler": "delete_conversation",
+  "line": 165,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_conversation"
+ },
+ {
+  "method": "GET",
+  "path": "/{conversation_id}/messages",
+  "handler": "list_conversation_messages",
+  "line": 194,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_conversation_messages"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/messages",
+  "handler": "send_conversation_message",
+  "line": 408,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "send_conversation_message"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/messages/preview-raw-payload",
+  "handler": "preview_conversation_model_request",
+  "line": 567,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "preview_conversation_model_request"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/stream",
+  "handler": "retrieve_conversation_stream",
+  "line": 690,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_conversation_stream"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/cancel",
+  "handler": "cancel_conversation",
+  "line": 837,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "cancel_conversation"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/recompile",
+  "handler": "recompile_conversation",
+  "line": 948,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "recompile_conversation"
+ },
+ {
+  "method": "POST",
+  "path": "/{conversation_id}/compact",
+  "handler": "compact_conversation",
+  "line": 1030,
+  "file": "letta/server/rest_api/routers/v1/conversations.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "compact_conversation"
+ },
+ {
+  "method": "GET",
+  "path": "/total_storage_size",
+  "handler": "get_embeddings_total_storage_size",
+  "line": 12,
+  "file": "letta/server/rest_api/routers/v1/embeddings.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "get_total_storage_size"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_folders",
+  "line": 53,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "count_folders"
+ },
+ {
+  "method": "GET",
+  "path": "/{folder_id}",
+  "handler": "retrieve_folder",
+  "line": 65,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_folder"
+ },
+ {
+  "method": "GET",
+  "path": "/name/{folder_name}",
+  "handler": "get_folder_by_name",
+  "line": 80,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "get_folder_by_name"
+ },
+ {
+  "method": "GET",
+  "path": "/metadata",
+  "handler": "retrieve_metadata",
+  "line": 98,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_metadata"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_folders",
+  "line": 119,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_folders"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_folder",
+  "line": 145,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_folder"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{folder_id}",
+  "handler": "modify_folder",
+  "line": 180,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_folder"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{folder_id}",
+  "handler": "delete_folder",
+  "line": 196,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_folder"
+ },
+ {
+  "method": "POST",
+  "path": "/{folder_id}/upload",
+  "handler": "upload_file_to_folder",
+  "line": 234,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "upload_file_to_folder"
+ },
+ {
+  "method": "GET",
+  "path": "/{folder_id}/agents",
+  "handler": "list_agents_for_folder",
+  "line": 375,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_agents_for_folder"
+ },
+ {
+  "method": "GET",
+  "path": "/{folder_id}/passages",
+  "handler": "list_folder_passages",
+  "line": 408,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_folder_passages"
+ },
+ {
+  "method": "GET",
+  "path": "/{folder_id}/files",
+  "handler": "list_files_for_folder",
+  "line": 441,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_files_for_folder"
+ },
+ {
+  "method": "GET",
+  "path": "/{folder_id}/files/{file_id}",
+  "handler": "retrieve_file",
+  "line": 477,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_file"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{folder_id}/{file_id}",
+  "handler": "delete_file_from_folder",
+  "line": 552,
+  "file": "letta/server/rest_api/routers/v1/folders.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_file_from_folder"
+ },
+ {
+  "method": "ANY",
+  "path": "/{path:path}",
+  "handler": "proxy_git_http",
+  "line": 251,
+  "file": "letta/server/rest_api/routers/v1/git_http.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "proxy_git_http"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_groups",
+  "line": 18,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_groups"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_groups",
+  "line": 57,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "count_groups"
+ },
+ {
+  "method": "GET",
+  "path": "/{group_id}",
+  "handler": "retrieve_group",
+  "line": 69,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_group"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_group",
+  "line": 82,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_group"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{group_id}",
+  "handler": "modify_group",
+  "line": 98,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_group"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{group_id}",
+  "handler": "delete_group",
+  "line": 115,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_group"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{group_id}/messages/{message_id}",
+  "handler": "modify_group_message",
+  "line": 134,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_group_message"
+ },
+ {
+  "method": "GET",
+  "path": "/{group_id}/messages",
+  "handler": "list_group_messages",
+  "line": 150,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_group_messages"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{group_id}/reset-messages",
+  "handler": "reset_group_messages",
+  "line": 207,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "reset_group_messages"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{group_id}/blocks/attach/{block_id}",
+  "handler": "attach_block_to_group",
+  "line": 220,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "attach_block_to_group"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{group_id}/blocks/detach/{block_id}",
+  "handler": "detach_block_from_group",
+  "line": 240,
+  "file": "letta/server/rest_api/routers/v1/groups.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "detach_block_from_group"
+ },
+ {
+  "method": "GET",
+  "path": "/health/",
+  "handler": "check_health",
+  "line": 19,
+  "file": "letta/server/rest_api/routers/v1/health.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "check_health"
+ },
+ {
+  "method": "GET",
+  "path": "/ready/",
+  "handler": "check_readiness",
+  "line": 25,
+  "file": "letta/server/rest_api/routers/v1/health.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "check_readiness"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_identities",
+  "line": 26,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "list_identities"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_identities",
+  "line": 72,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "count_identities"
+ },
+ {
+  "method": "GET",
+  "path": "/{identity_id}",
+  "handler": "retrieve_identity",
+  "line": 87,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "retrieve_identity"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_identity",
+  "line": 97,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "create_identity"
+ },
+ {
+  "method": "PUT",
+  "path": "/",
+  "handler": "upsert_identity",
+  "line": 110,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "upsert_identity"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{identity_id}",
+  "handler": "modify_identity",
+  "line": 123,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "update_identity"
+ },
+ {
+  "method": "PUT",
+  "path": "/{identity_id}/properties",
+  "handler": "upsert_properties_for_identity",
+  "line": 134,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "upsert_properties_for_identity"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{identity_id}",
+  "handler": "delete_identity",
+  "line": 145,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [
+   "identities"
+  ],
+  "summary": "",
+  "op_id": "delete_identity"
+ },
+ {
+  "method": "GET",
+  "path": "/{identity_id}/agents",
+  "handler": "list_agents_for_identity",
+  "line": 158,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_agents_for_identity"
+ },
+ {
+  "method": "GET",
+  "path": "/{identity_id}/blocks",
+  "handler": "list_blocks_for_identity",
+  "line": 196,
+  "file": "letta/server/rest_api/routers/v1/identities.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_blocks_for_identity"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_runs",
+  "line": 30,
+  "file": "letta/server/rest_api/routers/v1/internal_runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_internal_runs"
+ },
+ {
+  "method": "POST",
+  "path": "/cache-warm",
+  "handler": "warm_search_cache",
+  "line": 59,
+  "file": "letta/server/rest_api/routers/v1/internal_search.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "warm_internal_search_cache"
+ },
+ {
+  "method": "POST",
+  "path": "/groups",
+  "handler": "create_group",
+  "line": 16,
+  "file": "letta/server/rest_api/routers/v1/internal_templates.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_internal_template_group"
+ },
+ {
+  "method": "POST",
+  "path": "/agents",
+  "handler": "create_agent",
+  "line": 29,
+  "file": "letta/server/rest_api/routers/v1/internal_templates.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_internal_template_agent"
+ },
+ {
+  "method": "POST",
+  "path": "/blocks",
+  "handler": "create_block",
+  "line": 43,
+  "file": "letta/server/rest_api/routers/v1/internal_templates.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_internal_template_block"
+ },
+ {
+  "method": "POST",
+  "path": "/blocks/batch",
+  "handler": "create_blocks_batch",
+  "line": 57,
+  "file": "letta/server/rest_api/routers/v1/internal_templates.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_internal_template_blocks_batch"
+ },
+ {
+  "method": "GET",
+  "path": "/deployment/{deployment_id}",
+  "handler": "list_deployment_entities",
+  "line": 104,
+  "file": "letta/server/rest_api/routers/v1/internal_templates.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_deployment_entities"
+ },
+ {
+  "method": "DELETE",
+  "path": "/deployment/{deployment_id}",
+  "handler": "delete_deployment",
+  "line": 213,
+  "file": "letta/server/rest_api/routers/v1/internal_templates.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_deployment"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_jobs",
+  "line": 17,
+  "file": "letta/server/rest_api/routers/v1/jobs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_jobs"
+ },
+ {
+  "method": "GET",
+  "path": "/active",
+  "handler": "list_active_jobs",
+  "line": 68,
+  "file": "letta/server/rest_api/routers/v1/jobs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_active_jobs"
+ },
+ {
+  "method": "GET",
+  "path": "/{job_id}",
+  "handler": "retrieve_job",
+  "line": 95,
+  "file": "letta/server/rest_api/routers/v1/jobs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_job"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{job_id}/cancel",
+  "handler": "cancel_job",
+  "line": 108,
+  "file": "letta/server/rest_api/routers/v1/jobs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "cancel_job"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{job_id}",
+  "handler": "delete_job",
+  "line": 133,
+  "file": "letta/server/rest_api/routers/v1/jobs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_job"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_llm_models",
+  "line": 16,
+  "file": "letta/server/rest_api/routers/v1/llms.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_models"
+ },
+ {
+  "method": "GET",
+  "path": "/embedding",
+  "handler": "list_embedding_models",
+  "line": 43,
+  "file": "letta/server/rest_api/routers/v1/llms.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_embedding_models"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_mcp_server",
+  "line": 41,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_create_mcp_server"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_mcp_servers",
+  "line": 60,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_list_mcp_servers"
+ },
+ {
+  "method": "GET",
+  "path": "/{mcp_server_id}",
+  "handler": "retrieve_mcp_server",
+  "line": 80,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_retrieve_mcp_server"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{mcp_server_id}",
+  "handler": "delete_mcp_server",
+  "line": 98,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_delete_mcp_server"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{mcp_server_id}",
+  "handler": "update_mcp_server",
+  "line": 115,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_update_mcp_server"
+ },
+ {
+  "method": "GET",
+  "path": "/{mcp_server_id}/tools",
+  "handler": "list_tools_for_mcp_server",
+  "line": 134,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_list_tools_for_mcp_server"
+ },
+ {
+  "method": "GET",
+  "path": "/{mcp_server_id}/tools/{tool_id}",
+  "handler": "retrieve_mcp_tool",
+  "line": 149,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_retrieve_mcp_tool"
+ },
+ {
+  "method": "POST",
+  "path": "/{mcp_server_id}/tools/{tool_id}/run",
+  "handler": "run_mcp_tool",
+  "line": 164,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_run_tool"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{mcp_server_id}/refresh",
+  "handler": "refresh_mcp_server_tools",
+  "line": 195,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_refresh_mcp_server_tools"
+ },
+ {
+  "method": "GET",
+  "path": "/connect/{mcp_server_id}",
+  "handler": "connect_mcp_server",
+  "line": 229,
+  "file": "letta/server/rest_api/routers/v1/mcp_servers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_connect_mcp_server"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_all_messages",
+  "line": 31,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_all_messages"
+ },
+ {
+  "method": "POST",
+  "path": "/search",
+  "handler": "search_all_messages",
+  "line": 66,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "search_all_messages"
+ },
+ {
+  "method": "POST",
+  "path": "/batches",
+  "handler": "create_batch",
+  "line": 98,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_batch"
+ },
+ {
+  "method": "GET",
+  "path": "/batches/{batch_id}",
+  "handler": "retrieve_batch",
+  "line": 160,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_batch"
+ },
+ {
+  "method": "GET",
+  "path": "/batches",
+  "handler": "list_batches",
+  "line": 174,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_batches"
+ },
+ {
+  "method": "GET",
+  "path": "/batches/{batch_id}/messages",
+  "handler": "list_messages_for_batch",
+  "line": 211,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_messages_for_batch"
+ },
+ {
+  "method": "PATCH",
+  "path": "/batches/{batch_id}/cancel",
+  "handler": "cancel_batch",
+  "line": 246,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "cancel_batch"
+ },
+ {
+  "method": "GET",
+  "path": "/{message_id}",
+  "handler": "retrieve_message",
+  "line": 276,
+  "file": "letta/server/rest_api/routers/v1/messages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_message"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "get_all_orgs",
+  "line": 16,
+  "file": "letta/server/rest_api/routers/v1/organizations.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "list_orgs"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_org",
+  "line": 28,
+  "file": "letta/server/rest_api/routers/v1/organizations.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "create_organization"
+ },
+ {
+  "method": "DELETE",
+  "path": "/",
+  "handler": "delete_org",
+  "line": 41,
+  "file": "letta/server/rest_api/routers/v1/organizations.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "delete_organization_by_id"
+ },
+ {
+  "method": "PATCH",
+  "path": "/",
+  "handler": "update_org",
+  "line": 53,
+  "file": "letta/server/rest_api/routers/v1/organizations.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "update_organization"
+ },
+ {
+  "method": "POST",
+  "path": "/search",
+  "handler": "search_passages",
+  "line": 83,
+  "file": "letta/server/rest_api/routers/v1/passages.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "search_passages"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_providers",
+  "line": 18,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_providers"
+ },
+ {
+  "method": "GET",
+  "path": "/{provider_id}",
+  "handler": "retrieve_provider",
+  "line": 55,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_provider"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_provider",
+  "line": 68,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_provider"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{provider_id}",
+  "handler": "modify_provider",
+  "line": 89,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_provider"
+ },
+ {
+  "method": "POST",
+  "path": "/check",
+  "handler": "check_provider",
+  "line": 103,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "check_provider"
+ },
+ {
+  "method": "POST",
+  "path": "/{provider_id}/check",
+  "handler": "check_existing_provider",
+  "line": 120,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "check_existing_provider"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{provider_id}/refresh",
+  "handler": "refresh_provider_models",
+  "line": 148,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "refresh_provider_models"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{provider_id}",
+  "handler": "delete_provider",
+  "line": 169,
+  "file": "letta/server/rest_api/routers/v1/providers.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_provider"
+ },
+ {
+  "method": "GET",
+  "path": "/active",
+  "handler": "list_active_runs",
+  "line": 119,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_active_runs"
+ },
+ {
+  "method": "GET",
+  "path": "/{run_id}",
+  "handler": "retrieve_run",
+  "line": 144,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_run"
+ },
+ {
+  "method": "GET",
+  "path": "/{run_id}/messages",
+  "handler": "list_messages_for_run",
+  "line": 167,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_messages_for_run"
+ },
+ {
+  "method": "GET",
+  "path": "/{run_id}/usage",
+  "handler": "retrieve_usage_for_run",
+  "line": 189,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_usage_for_run"
+ },
+ {
+  "method": "GET",
+  "path": "/{run_id}/metrics",
+  "handler": "retrieve_metrics_for_run",
+  "line": 204,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_metrics_for_run"
+ },
+ {
+  "method": "GET",
+  "path": "/{run_id}/steps",
+  "handler": "list_steps_for_run",
+  "line": 239,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_steps_for_run"
+ },
+ {
+  "method": "GET",
+  "path": "/{run_id}/trace",
+  "handler": "retrieve_trace_for_run",
+  "line": 272,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_trace_for_run"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{run_id}",
+  "handler": "delete_run",
+  "line": 311,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_run"
+ },
+ {
+  "method": "POST",
+  "path": "/{run_id}/stream",
+  "handler": "retrieve_stream_for_run",
+  "line": 357,
+  "file": "letta/server/rest_api/routers/v1/runs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_stream_for_run"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_sandbox_config",
+  "line": 34,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_sandbox_config"
+ },
+ {
+  "method": "POST",
+  "path": "/e2b/default",
+  "handler": "create_default_e2b_sandbox_config",
+  "line": 45,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_default_e2b_sandbox_config"
+ },
+ {
+  "method": "POST",
+  "path": "/local/default",
+  "handler": "create_default_local_sandbox_config",
+  "line": 54,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_default_local_sandbox_config"
+ },
+ {
+  "method": "POST",
+  "path": "/local",
+  "handler": "create_custom_local_sandbox_config",
+  "line": 63,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_custom_local_sandbox_config"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{sandbox_config_id}",
+  "handler": "update_sandbox_config",
+  "line": 90,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "update_sandbox_config"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{sandbox_config_id}",
+  "handler": "delete_sandbox_config",
+  "line": 101,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_sandbox_config"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_sandbox_configs",
+  "line": 111,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_sandbox_configs"
+ },
+ {
+  "method": "POST",
+  "path": "/local/recreate-venv",
+  "handler": "force_recreate_local_sandbox_venv",
+  "line": 123,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "force_recreate_local_sandbox_venv"
+ },
+ {
+  "method": "POST",
+  "path": "/{sandbox_config_id}/environment-variable",
+  "handler": "create_sandbox_env_var",
+  "line": 160,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_sandbox_env_var"
+ },
+ {
+  "method": "PATCH",
+  "path": "/environment-variable/{env_var_id}",
+  "handler": "update_sandbox_env_var",
+  "line": 171,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "update_sandbox_env_var"
+ },
+ {
+  "method": "DELETE",
+  "path": "/environment-variable/{env_var_id}",
+  "handler": "delete_sandbox_env_var",
+  "line": 182,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_sandbox_env_var"
+ },
+ {
+  "method": "GET",
+  "path": "/{sandbox_config_id}/environment-variable",
+  "handler": "list_sandbox_env_vars",
+  "line": 192,
+  "file": "letta/server/rest_api/routers/v1/sandbox_configs.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_sandbox_env_vars"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_sources",
+  "line": 50,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "count_sources"
+ },
+ {
+  "method": "GET",
+  "path": "/{source_id}",
+  "handler": "retrieve_source",
+  "line": 62,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_source"
+ },
+ {
+  "method": "GET",
+  "path": "/name/{source_name}",
+  "handler": "get_source_id_by_name",
+  "line": 76,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "get_source_id_by_name"
+ },
+ {
+  "method": "GET",
+  "path": "/metadata",
+  "handler": "get_sources_metadata",
+  "line": 91,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "get_sources_metadata"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_sources",
+  "line": 112,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_sources"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_source",
+  "line": 124,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_source"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{source_id}",
+  "handler": "modify_source",
+  "line": 159,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_source"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{source_id}",
+  "handler": "delete_source",
+  "line": 175,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_source"
+ },
+ {
+  "method": "POST",
+  "path": "/{source_id}/upload",
+  "handler": "upload_file_to_source",
+  "line": 213,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "upload_file_to_source"
+ },
+ {
+  "method": "GET",
+  "path": "/{source_id}/agents",
+  "handler": "get_agents_for_source",
+  "line": 353,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "get_agents_for_source"
+ },
+ {
+  "method": "GET",
+  "path": "/{source_id}/passages",
+  "handler": "list_source_passages",
+  "line": 366,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_source_passages"
+ },
+ {
+  "method": "GET",
+  "path": "/{source_id}/files",
+  "handler": "list_source_files",
+  "line": 388,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_source_files"
+ },
+ {
+  "method": "GET",
+  "path": "/{source_id}/files/{file_id}",
+  "handler": "get_file_metadata",
+  "line": 416,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "get_file_metadata"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{source_id}/{file_id}",
+  "handler": "delete_file_from_source",
+  "line": 442,
+  "file": "letta/server/rest_api/routers/v1/sources.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_file_from_source"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_steps",
+  "line": 22,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_steps"
+ },
+ {
+  "method": "GET",
+  "path": "/{step_id}",
+  "handler": "retrieve_step",
+  "line": 72,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_step"
+ },
+ {
+  "method": "GET",
+  "path": "/{step_id}/metrics",
+  "handler": "retrieve_metrics_for_step",
+  "line": 85,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_metrics_for_step"
+ },
+ {
+  "method": "GET",
+  "path": "/{step_id}/trace",
+  "handler": "retrieve_trace_for_step",
+  "line": 98,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_trace_for_step"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{step_id}/feedback",
+  "handler": "modify_feedback_for_step",
+  "line": 121,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_feedback_for_step"
+ },
+ {
+  "method": "GET",
+  "path": "/{step_id}/messages",
+  "handler": "list_messages_for_step",
+  "line": 135,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_messages_for_step"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{step_id}/transaction/{transaction_id}",
+  "handler": "update_step_transaction_id",
+  "line": 162,
+  "file": "letta/server/rest_api/routers/v1/steps.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "update_step_transaction_id"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_tags",
+  "line": 15,
+  "file": "letta/server/rest_api/routers/v1/tags.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "list_tags"
+ },
+ {
+  "method": "GET",
+  "path": "/{step_id}",
+  "handler": "retrieve_provider_trace",
+  "line": 14,
+  "file": "letta/server/rest_api/routers/v1/telemetry.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_provider_trace"
+ },
+ {
+  "method": "DELETE",
+  "path": "/{tool_id}",
+  "handler": "delete_tool",
+  "line": 50,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_tool"
+ },
+ {
+  "method": "GET",
+  "path": "/count",
+  "handler": "count_tools",
+  "line": 63,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "count_tools"
+ },
+ {
+  "method": "GET",
+  "path": "/{tool_id}",
+  "handler": "retrieve_tool",
+  "line": 154,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "retrieve_tool"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_tools",
+  "line": 171,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_tools"
+ },
+ {
+  "method": "POST",
+  "path": "/search",
+  "handler": "search_tools",
+  "line": 275,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "search_tools"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_tool",
+  "line": 315,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_tool"
+ },
+ {
+  "method": "PUT",
+  "path": "/",
+  "handler": "upsert_tool",
+  "line": 335,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "upsert_tool"
+ },
+ {
+  "method": "PATCH",
+  "path": "/{tool_id}",
+  "handler": "modify_tool",
+  "line": 356,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "modify_tool"
+ },
+ {
+  "method": "POST",
+  "path": "/add-base-tools",
+  "handler": "upsert_base_tools",
+  "line": 374,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "add_base_tools"
+ },
+ {
+  "method": "POST",
+  "path": "/run",
+  "handler": "run_tool_from_source",
+  "line": 386,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "run_tool_from_source"
+ },
+ {
+  "method": "GET",
+  "path": "/mcp/servers",
+  "handler": "list_mcp_servers",
+  "line": 415,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_mcp_servers"
+ },
+ {
+  "method": "GET",
+  "path": "/mcp/servers/{mcp_server_name}/tools",
+  "handler": "list_mcp_tools_by_server",
+  "line": 436,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "list_mcp_tools_by_server"
+ },
+ {
+  "method": "POST",
+  "path": "/mcp/servers/{mcp_server_name}/resync",
+  "handler": "resync_mcp_server_tools",
+  "line": 459,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "resync_mcp_server_tools"
+ },
+ {
+  "method": "POST",
+  "path": "/mcp/servers/{mcp_server_name}/{mcp_tool_name}",
+  "handler": "add_mcp_tool",
+  "line": 480,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "add_mcp_tool"
+ },
+ {
+  "method": "PUT",
+  "path": "/mcp/servers",
+  "handler": "add_mcp_server_to_config",
+  "line": 531,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "add_mcp_server"
+ },
+ {
+  "method": "PATCH",
+  "path": "/mcp/servers/{mcp_server_name}",
+  "handler": "update_mcp_server",
+  "line": 570,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "update_mcp_server"
+ },
+ {
+  "method": "DELETE",
+  "path": "/mcp/servers/{mcp_server_name}",
+  "handler": "delete_mcp_server_from_config",
+  "line": 595,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "delete_mcp_server"
+ },
+ {
+  "method": "POST",
+  "path": "/mcp/servers/test",
+  "handler": "test_mcp_server",
+  "line": 622,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "test_mcp_server"
+ },
+ {
+  "method": "POST",
+  "path": "/mcp/servers/connect",
+  "handler": "connect_mcp_server",
+  "line": 668,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "connect_mcp_server"
+ },
+ {
+  "method": "POST",
+  "path": "/generate-schema",
+  "handler": "generate_json_schema",
+  "line": 773,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "generate_json_schema"
+ },
+ {
+  "method": "POST",
+  "path": "/mcp/servers/{mcp_server_name}/tools/{tool_name}/execute",
+  "handler": "execute_mcp_tool",
+  "line": 798,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "execute_mcp_tool"
+ },
+ {
+  "method": "GET",
+  "path": "/mcp/oauth/callback",
+  "handler": "mcp_oauth_callback",
+  "line": 859,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "mcp_oauth_callback"
+ },
+ {
+  "method": "POST",
+  "path": "/generate-tool",
+  "handler": "generate_tool_from_prompt",
+  "line": 921,
+  "file": "letta/server/rest_api/routers/v1/tools.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "generate_tool"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "list_users",
+  "line": 18,
+  "file": "letta/server/rest_api/routers/v1/users.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "list_users"
+ },
+ {
+  "method": "POST",
+  "path": "/",
+  "handler": "create_user",
+  "line": 30,
+  "file": "letta/server/rest_api/routers/v1/users.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "create_user"
+ },
+ {
+  "method": "PUT",
+  "path": "/",
+  "handler": "update_user",
+  "line": 43,
+  "file": "letta/server/rest_api/routers/v1/users.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "update_user"
+ },
+ {
+  "method": "DELETE",
+  "path": "/",
+  "handler": "delete_user",
+  "line": 55,
+  "file": "letta/server/rest_api/routers/v1/users.py",
+  "tags": [
+   "admin"
+  ],
+  "summary": "",
+  "op_id": "delete_user"
+ },
+ {
+  "method": "POST",
+  "path": "/{agent_id}/chat/completions",
+  "handler": "create_voice_chat_completions",
+  "line": 33,
+  "file": "letta/server/rest_api/routers/v1/voice.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "create_voice_chat_completions"
+ },
+ {
+  "method": "ANY",
+  "path": "/v1/messages",
+  "handler": "zai_messages_proxy",
+  "line": 33,
+  "file": "letta/server/rest_api/routers/v1/zai.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "zai_messages_proxy"
+ },
+ {
+  "method": "ANY",
+  "path": "/v1/{endpoint:path}",
+  "handler": "zai_catchall_proxy",
+  "line": 271,
+  "file": "letta/server/rest_api/routers/v1/zai.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "zai_catchall_proxy"
+ },
+ {
+  "method": "GET",
+  "path": "/",
+  "handler": "redirect_to_docs",
+  "line": 7,
+  "file": "letta/server/rest_api/static_files.py",
+  "tags": [],
+  "summary": "",
+  "op_id": "redirect_to_docs"
+ }
+]
