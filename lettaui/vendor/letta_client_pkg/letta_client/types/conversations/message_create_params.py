@@ -1,0 +1,261 @@
+# File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+from __future__ import annotations
+
+from typing import Dict, List, Union, Iterable, Optional
+from typing_extensions import Literal, Required, TypeAlias, TypedDict
+
+from ..agents.message_type import MessageType
+from ..message_create_param import MessageCreateParam
+from ..agents.tool_return_param import ToolReturnParam
+from ..agents.text_content_param import TextContentParam
+from ..agents.image_content_param import ImageContentParam
+from ..agents.approval_create_param import ApprovalCreateParam
+from ..agents.reasoning_content_param import ReasoningContentParam
+from ..agents.tool_call_content_param import ToolCallContentParam
+from ..agents.tool_return_content_param import ToolReturnContentParam
+from ..agents.omitted_reasoning_content_param import OmittedReasoningContentParam
+from ..agents.redacted_reasoning_content_param import RedactedReasoningContentParam
+
+__all__ = [
+    "MessageCreateParams",
+    "ClientSkill",
+    "ClientTool",
+    "InputUnionMember1",
+    "InputUnionMember1SummarizedReasoningContent",
+    "InputUnionMember1SummarizedReasoningContentSummary",
+    "Message",
+    "MessageToolReturnCreate",
+]
+
+
+class MessageCreateParams(TypedDict, total=False):
+    agent_id: Optional[str]
+    """Agent ID for agent-direct mode with 'default' conversation.
+
+    Use with conversation_id='default' in the URL path.
+    """
+
+    assistant_message_tool_kwarg: str
+    """The name of the message argument in the designated message tool.
+
+    Still supported for legacy agent types, but deprecated for letta_v1_agent
+    onward.
+    """
+
+    assistant_message_tool_name: str
+    """The name of the designated message tool.
+
+    Still supported for legacy agent types, but deprecated for letta_v1_agent
+    onward.
+    """
+
+    background: bool
+    """
+    Whether to process the request in the background (only used when
+    streaming=true).
+    """
+
+    client_skills: Optional[Iterable[ClientSkill]]
+    """Client-side skills available in the environment.
+
+    These are rendered in the system prompt's available skills section alongside
+    agent-scoped skills from MemFS.
+    """
+
+    client_tools: Optional[Iterable[ClientTool]]
+    """Client-side tools that the agent can call.
+
+    When the agent calls a client-side tool, execution pauses and returns control to
+    the client to execute the tool and provide the result via a ToolReturn.
+    """
+
+    enable_thinking: str
+    """
+    If set to True, enables reasoning before responses or tool calls from the agent.
+    """
+
+    include_compaction_messages: bool
+    """
+    If True, compaction events emit structured `SummaryMessage` and `EventMessage`
+    types. If False (default), compaction messages are not included in the response.
+    """
+
+    include_pings: bool
+    """
+    Whether to include periodic keepalive ping messages in the stream to prevent
+    connection timeouts (only used when streaming=true).
+    """
+
+    include_return_message_types: Optional[List[MessageType]]
+    """Only return specified message types in the response.
+
+    If `None` (default) returns all messages.
+    """
+
+    input: Union[str, Iterable[InputUnionMember1], None]
+    """Syntactic sugar for a single user message.
+
+    Equivalent to messages=[{'role': 'user', 'content': input}].
+    """
+
+    max_steps: int
+    """Maximum number of steps the agent should take to process the request."""
+
+    messages: Optional[Iterable[Message]]
+    """The messages to be sent to the agent."""
+
+    override_model: Optional[str]
+    """Model handle to use for this request instead of the agent's default model.
+
+    This allows sending a message to a different model without changing the agent's
+    configuration.
+    """
+
+    override_system: Optional[str]
+    """Optional per-request system prompt override.
+
+    When set, this is passed directly to the underlying LLM request and bypasses the
+    persisted/compiled system message for that request.
+    """
+
+    return_logprobs: bool
+    """If True, returns log probabilities of the output tokens in the response.
+
+    Useful for RL training. Only supported for OpenAI-compatible providers
+    (including SGLang).
+    """
+
+    return_token_ids: bool
+    """
+    If True, returns token IDs and logprobs for ALL LLM generations in the agent
+    step, not just the last one. Uses SGLang native /generate endpoint. Returns
+    'turns' field with TurnTokenData for each assistant/tool turn. Required for
+    proper multi-turn RL training with loss masking.
+    """
+
+    stream_tokens: bool
+    """
+    Flag to determine if individual tokens should be streamed, rather than streaming
+    per step (only used when streaming=true).
+    """
+
+    streaming: bool
+    """If True (default), returns a streaming response (Server-Sent Events).
+
+    If False, returns a complete JSON response.
+    """
+
+    top_logprobs: Optional[int]
+    """Number of most likely tokens to return at each position (0-20).
+
+    Requires return_logprobs=True.
+    """
+
+    use_assistant_message: bool
+    """
+    Whether the server should parse specific tool call arguments (default
+    `send_message`) as `AssistantMessage` objects. Still supported for legacy agent
+    types, but deprecated for letta_v1_agent onward.
+    """
+
+
+class ClientSkill(TypedDict, total=False):
+    """Schema for a client-side skill passed in the request.
+
+    Client-side skills represent environment-provided capabilities (e.g. project-scoped
+    skills) that are not stored in the agent's MemFS but should appear in the system
+    prompt's available skills section.
+    """
+
+    description: Required[str]
+    """Description of what the skill does"""
+
+    location: Required[str]
+    """Path or location hint for the skill (e.g. skills/my-skill/SKILL.md)"""
+
+    name: Required[str]
+    """The name of the skill"""
+
+
+class ClientTool(TypedDict, total=False):
+    """Schema for a client-side tool passed in the request.
+
+    Client-side tools are executed by the client, not the server. When the agent
+    calls a client-side tool, execution pauses and returns control to the client
+    to execute the tool and provide the result.
+    """
+
+    name: Required[str]
+    """The name of the tool function"""
+
+    description: Optional[str]
+    """Description of what the tool does"""
+
+    parameters: Optional[Dict[str, object]]
+    """JSON Schema for the function parameters"""
+
+
+class InputUnionMember1SummarizedReasoningContentSummary(TypedDict, total=False):
+    index: Required[int]
+    """The index of the summary part."""
+
+    text: Required[str]
+    """The text of the summary part."""
+
+
+class InputUnionMember1SummarizedReasoningContent(TypedDict, total=False):
+    """The style of reasoning content returned by the OpenAI Responses API"""
+
+    id: Required[str]
+    """The unique identifier for this reasoning step."""
+
+    summary: Required[Iterable[InputUnionMember1SummarizedReasoningContentSummary]]
+    """Summaries of the reasoning content."""
+
+    encrypted_content: str
+    """The encrypted reasoning content."""
+
+    type: Literal["summarized_reasoning"]
+    """Indicates this is a summarized reasoning step."""
+
+
+InputUnionMember1: TypeAlias = Union[
+    TextContentParam,
+    ImageContentParam,
+    ToolCallContentParam,
+    ToolReturnContentParam,
+    ReasoningContentParam,
+    RedactedReasoningContentParam,
+    OmittedReasoningContentParam,
+    InputUnionMember1SummarizedReasoningContent,
+]
+
+
+class MessageToolReturnCreate(TypedDict, total=False):
+    """Submit tool return(s) from client-side tool execution.
+
+    This is the preferred way to send tool results back to the agent after
+    client-side tool execution. It is equivalent to sending an ApprovalCreate
+    with tool return approvals, but provides a cleaner API for the common case.
+    """
+
+    tool_returns: Required[Iterable[ToolReturnParam]]
+    """List of tool returns from client-side execution"""
+
+    group_id: Optional[str]
+    """The multi-agent group that the message was sent in"""
+
+    otid: Optional[str]
+    """The offline threading id (OTID).
+
+    Set by the client to deduplicate requests. Used for idempotency in background
+    streaming mode — each message in a request must have a unique OTID. Retries of
+    the same request should reuse the same OTIDs.
+    """
+
+    type: Literal["tool_return"]
+    """The message type to be created."""
+
+
+Message: TypeAlias = Union[MessageCreateParam, ApprovalCreateParam, MessageToolReturnCreate]
